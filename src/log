@@ -1,0 +1,593 @@
+./core/ngx_connection.h:    unsigned            remain:1;
+./core/ngx_cycle.c:            ls[i].remain = 0;
+./core/ngx_cycle.c:                    ls[i].remain = 1;
+./core/ngx_cycle.c:        if (ls[i].remain || ls[i].fd == -1) {
+./core/ngx_inet.c:static ngx_int_t ngx_parse_unix_domain_url(ngx_pool_t *pool, ngx_url_t *u);
+./core/ngx_inet.c:        return ngx_parse_unix_domain_url(pool, u);
+./core/ngx_inet.c:ngx_parse_unix_domain_url(ngx_pool_t *pool, ngx_url_t *u)
+./core/ngx_inet.c:        u->err = "no path in the unix domain socket";
+./core/ngx_inet.c:        u->err = "too long path in the unix domain socket";
+./core/ngx_inet.c:    u->err = "the unix domain sockets are not supported on this platform";
+./core/ngx_resolver.c:        err = "zero-length domain name in DNS response";
+./core/ngx_string.c:             * To divide 64-bit numbers and to find remainders
+./core/nginx.c:main(int argc, char *const *argv)
+./core/nginx.c:                      "using last mask for remaining worker processes");
+./core/ngx_md5.c: * public domain implementation:
+./core/ngx_md5.c: * http://openwall.info/wiki/people/solar/software/public-domain-source-code/md5
+./http/ngx_http_core_module.c:static void *ngx_http_core_create_main_conf(ngx_conf_t *cf);
+./http/ngx_http_core_module.c:static char *ngx_http_core_init_main_conf(ngx_conf_t *cf, void *conf);
+./http/ngx_http_core_module.c:      offsetof(ngx_http_core_main_conf_t, variables_hash_max_size),
+./http/ngx_http_core_module.c:      offsetof(ngx_http_core_main_conf_t, variables_hash_bucket_size),
+./http/ngx_http_core_module.c:      offsetof(ngx_http_core_main_conf_t, server_names_hash_max_size),
+./http/ngx_http_core_module.c:      offsetof(ngx_http_core_main_conf_t, server_names_hash_bucket_size),
+./http/ngx_http_core_module.c:    ngx_http_core_create_main_conf,        /* create main configuration */
+./http/ngx_http_core_module.c:    ngx_http_core_init_main_conf,          /* init main configuration */
+./http/ngx_http_core_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_core_module.c:        cmcf = ngx_http_get_module_main_conf(r, ngx_http_core_module);
+./http/ngx_http_core_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_core_module.c:    cmcf = ngx_http_get_module_main_conf(r, ngx_http_core_module);
+./http/ngx_http_core_module.c:    if (r != r->main) {
+./http/ngx_http_core_module.c:    if (r == r->main) {
+./http/ngx_http_core_module.c:    if (r->method == NGX_HTTP_HEAD || (r != r->main && val.len == 0)) {
+./http/ngx_http_core_module.c:    b->last_buf = (r == r->main) ? 1 : 0;
+./http/ngx_http_core_module.c:    if (r != r->main) {
+./http/ngx_http_core_module.c:    r->main->subrequests--;
+./http/ngx_http_core_module.c:    if (r->main->subrequests == 0) {
+./http/ngx_http_core_module.c:        r->main->subrequests = 1;
+./http/ngx_http_core_module.c:    sr->main_conf = cscf->ctx->main_conf;
+./http/ngx_http_core_module.c:    sr->main = r->main;
+./http/ngx_http_core_module.c:    sr->main_filter_need_in_memory = r->main_filter_need_in_memory;
+./http/ngx_http_core_module.c:    r->main->count++;
+./http/ngx_http_core_module.c:        r->main->count++;
+./http/ngx_http_core_module.c:    r->main->count++;
+./http/ngx_http_core_module.c:    ngx_http_core_main_conf_t   *cmcf;
+./http/ngx_http_core_module.c:    r->main->count++;
+./http/ngx_http_core_module.c:            cmcf = ngx_http_get_module_main_conf(r, ngx_http_core_module);
+./http/ngx_http_core_module.c:    r = r->main;
+./http/ngx_http_core_module.c:    ngx_http_core_main_conf_t   *cmcf;
+./http/ngx_http_core_module.c:    ctx->main_conf = http_ctx->main_conf;
+./http/ngx_http_core_module.c:    cmcf = ctx->main_conf[ngx_http_core_module.ctx_index];
+./http/ngx_http_core_module.c:    ctx->main_conf = pctx->main_conf;
+./http/ngx_http_core_module.c:ngx_http_core_create_main_conf(ngx_conf_t *cf)
+./http/ngx_http_core_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_core_module.c:    cmcf = ngx_pcalloc(cf->pool, sizeof(ngx_http_core_main_conf_t));
+./http/ngx_http_core_module.c:ngx_http_core_init_main_conf(ngx_conf_t *cf, void *conf)
+./http/ngx_http_core_module.c:    ngx_http_core_main_conf_t *cmcf = conf;
+./http/ngx_http_core_module.c:    ctx->main_conf = pctx->main_conf;
+./http/ngx_http_core_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_core_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/ngx_http_upstream.c:static void *ngx_http_upstream_create_main_conf(ngx_conf_t *cf);
+./http/ngx_http_upstream.c:static char *ngx_http_upstream_init_main_conf(ngx_conf_t *cf, void *conf);
+./http/ngx_http_upstream.c:    ngx_http_upstream_create_main_conf,    /* create main configuration */
+./http/ngx_http_upstream.c:    ngx_http_upstream_init_main_conf,      /* init main configuration */
+./http/ngx_http_upstream.c:        r->main->count++;
+./http/ngx_http_upstream.c:    ngx_http_upstream_main_conf_t  *umcf;
+./http/ngx_http_upstream.c:        umcf = ngx_http_get_module_main_conf(r, ngx_http_upstream_module);
+./http/ngx_http_upstream.c:        && r == r->main)
+./http/ngx_http_upstream.c:        && r != r->main && u->output.buf)
+./http/ngx_http_upstream.c:    ngx_http_upstream_main_conf_t  *umcf;
+./http/ngx_http_upstream.c:    umcf = ngx_http_get_module_main_conf(r, ngx_http_upstream_module);
+./http/ngx_http_upstream.c:    ctx->main_conf = http_ctx->main_conf;
+./http/ngx_http_upstream.c:    ngx_http_upstream_main_conf_t  *umcf;
+./http/ngx_http_upstream.c:    umcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_upstream_module);
+./http/ngx_http_upstream.c:ngx_http_upstream_create_main_conf(ngx_conf_t *cf)
+./http/ngx_http_upstream.c:    ngx_http_upstream_main_conf_t  *umcf;
+./http/ngx_http_upstream.c:    umcf = ngx_pcalloc(cf->pool, sizeof(ngx_http_upstream_main_conf_t));
+./http/ngx_http_upstream.c:ngx_http_upstream_init_main_conf(ngx_conf_t *cf, void *conf)
+./http/ngx_http_upstream.c:    ngx_http_upstream_main_conf_t  *umcf = conf;
+./http/modules/ngx_http_limit_conn_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_limit_conn_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_limit_conn_module.c:    if (r->main->limit_conn_set) {
+./http/modules/ngx_http_limit_conn_module.c:        r->main->limit_conn_set = 1;
+./http/modules/ngx_http_limit_conn_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/modules/ngx_http_limit_conn_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/modules/ngx_http_dav_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_dav_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_dav_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/modules/ngx_http_dav_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/modules/ngx_http_xslt_filter_module.c:} ngx_http_xslt_filter_main_conf_t;
+./http/modules/ngx_http_xslt_filter_module.c:static void *ngx_http_xslt_filter_create_main_conf(ngx_conf_t *cf);
+./http/modules/ngx_http_xslt_filter_module.c:    ngx_http_xslt_filter_create_main_conf, /* create main configuration */
+./http/modules/ngx_http_xslt_filter_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_xslt_filter_module.c:    r->main_filter_need_in_memory = 1;
+./http/modules/ngx_http_xslt_filter_module.c:    if (r == r->main) {
+./http/modules/ngx_http_xslt_filter_module.c:    if (r == r->main) {
+./http/modules/ngx_http_xslt_filter_module.c:    if (r != r->main) {
+./http/modules/ngx_http_xslt_filter_module.c:    ngx_http_xslt_filter_main_conf_t  *xmcf;
+./http/modules/ngx_http_xslt_filter_module.c:    xmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_xslt_filter_module);
+./http/modules/ngx_http_xslt_filter_module.c:    ngx_http_xslt_filter_main_conf_t  *xmcf;
+./http/modules/ngx_http_xslt_filter_module.c:    xmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_xslt_filter_module);
+./http/modules/ngx_http_xslt_filter_module.c:ngx_http_xslt_filter_create_main_conf(ngx_conf_t *cf)
+./http/modules/ngx_http_xslt_filter_module.c:    ngx_http_xslt_filter_main_conf_t  *conf;
+./http/modules/ngx_http_xslt_filter_module.c:    conf = ngx_palloc(cf->pool, sizeof(ngx_http_xslt_filter_main_conf_t));
+./http/modules/ngx_http_geo_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_geo_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_ssi_filter_module.h:} ngx_http_ssi_main_conf_t;
+./http/modules/ngx_http_headers_filter_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_headers_filter_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_headers_filter_module.c:        || r != r->main
+./http/modules/ngx_http_limit_req_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_limit_req_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_limit_req_module.c:    if (r->main->limit_req_set) {
+./http/modules/ngx_http_limit_req_module.c:    r->main->limit_req_set = 1;
+./http/modules/ngx_http_limit_req_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/modules/ngx_http_limit_req_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/modules/ngx_http_access_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_access_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_access_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/modules/ngx_http_access_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/modules/ngx_http_sub_filter_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_sub_filter_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_sub_filter_module.c:    if (r == r->main) {
+./http/modules/ngx_http_scgi_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_scgi_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_scgi_module.c:    ngx_http_upstream_main_conf_t  *umcf;
+./http/modules/ngx_http_scgi_module.c:    umcf = ngx_http_get_module_main_conf(r, ngx_http_upstream_module);
+./http/modules/ngx_http_empty_gif_module.c:    NULL,                          /* create main configuration */
+./http/modules/ngx_http_empty_gif_module.c:    NULL,                          /* init main configuration */
+./http/modules/ngx_http_geoip_module.c:    ngx_http_geoip_create_conf,            /* create main configuration */
+./http/modules/ngx_http_geoip_module.c:    ngx_http_geoip_init_conf,              /* init main configuration */
+./http/modules/ngx_http_geoip_module.c:    gcf = ngx_http_get_module_main_conf(r, ngx_http_geoip_module);
+./http/modules/ngx_http_geoip_module.c:    gcf = ngx_http_get_module_main_conf(r, ngx_http_geoip_module);
+./http/modules/ngx_http_geoip_module.c:    gcf = ngx_http_get_module_main_conf(r, ngx_http_geoip_module);
+./http/modules/ngx_http_browser_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_browser_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_degradation_module.c:} ngx_http_degradation_main_conf_t;
+./http/modules/ngx_http_degradation_module.c:static void *ngx_http_degradation_create_main_conf(ngx_conf_t *cf);
+./http/modules/ngx_http_degradation_module.c:    ngx_http_degradation_create_main_conf, /* create main configuration */
+./http/modules/ngx_http_degradation_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_degradation_module.c:    ngx_http_degradation_main_conf_t  *dmcf;
+./http/modules/ngx_http_degradation_module.c:    dmcf = ngx_http_get_module_main_conf(r, ngx_http_degradation_module);
+./http/modules/ngx_http_degradation_module.c:ngx_http_degradation_create_main_conf(ngx_conf_t *cf)
+./http/modules/ngx_http_degradation_module.c:    ngx_http_degradation_main_conf_t  *dmcf;
+./http/modules/ngx_http_degradation_module.c:    dmcf = ngx_pcalloc(cf->pool, sizeof(ngx_http_degradation_main_conf_t));
+./http/modules/ngx_http_degradation_module.c:    ngx_http_degradation_main_conf_t  *dmcf = conf;
+./http/modules/ngx_http_degradation_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/modules/ngx_http_degradation_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/modules/perl/ngx_http_perl_module.c:} ngx_http_perl_main_conf_t;
+./http/modules/perl/ngx_http_perl_module.c:    ngx_http_perl_main_conf_t *pmcf);
+./http/modules/perl/ngx_http_perl_module.c:    ngx_http_perl_main_conf_t *pmcf);
+./http/modules/perl/ngx_http_perl_module.c:static void *ngx_http_perl_create_main_conf(ngx_conf_t *cf);
+./http/modules/perl/ngx_http_perl_module.c:static char *ngx_http_perl_init_main_conf(ngx_conf_t *cf, void *conf);
+./http/modules/perl/ngx_http_perl_module.c:      offsetof(ngx_http_perl_main_conf_t, modules),
+./http/modules/perl/ngx_http_perl_module.c:      offsetof(ngx_http_perl_main_conf_t, requires),
+./http/modules/perl/ngx_http_perl_module.c:    ngx_http_perl_create_main_conf,        /* create main configuration */
+./http/modules/perl/ngx_http_perl_module.c:    ngx_http_perl_init_main_conf,          /* init main configuration */
+./http/modules/perl/ngx_http_perl_module.c:    r->main->count++;
+./http/modules/perl/ngx_http_perl_module.c:    ngx_http_perl_main_conf_t  *pmcf;
+./http/modules/perl/ngx_http_perl_module.c:    pmcf = ngx_http_get_module_main_conf(r, ngx_http_perl_module);
+./http/modules/perl/ngx_http_perl_module.c:    ngx_http_perl_main_conf_t  *pmcf;
+./http/modules/perl/ngx_http_perl_module.c:    pmcf = ngx_http_get_module_main_conf(r, ngx_http_perl_module);
+./http/modules/perl/ngx_http_perl_module.c:    ngx_http_perl_main_conf_t  *pmcf;
+./http/modules/perl/ngx_http_perl_module.c:    pmcf = ngx_http_get_module_main_conf(r, ngx_http_perl_module);
+./http/modules/perl/ngx_http_perl_module.c:ngx_http_perl_init_interpreter(ngx_conf_t *cf, ngx_http_perl_main_conf_t *pmcf)
+./http/modules/perl/ngx_http_perl_module.c:    ngx_http_perl_main_conf_t *pmcf)
+./http/modules/perl/ngx_http_perl_module.c:ngx_http_perl_create_main_conf(ngx_conf_t *cf)
+./http/modules/perl/ngx_http_perl_module.c:    ngx_http_perl_main_conf_t  *pmcf;
+./http/modules/perl/ngx_http_perl_module.c:    pmcf = ngx_pcalloc(cf->pool, sizeof(ngx_http_perl_main_conf_t));
+./http/modules/perl/ngx_http_perl_module.c:ngx_http_perl_init_main_conf(ngx_conf_t *cf, void *conf)
+./http/modules/perl/ngx_http_perl_module.c:    ngx_http_perl_main_conf_t *pmcf = conf;
+./http/modules/perl/ngx_http_perl_module.c:    ngx_http_ssi_main_conf_t  *smcf;
+./http/modules/perl/ngx_http_perl_module.c:    smcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_ssi_filter_module);
+./http/modules/perl/ngx_http_perl_module.c:    ngx_http_perl_main_conf_t  *pmcf;
+./http/modules/perl/ngx_http_perl_module.c:    pmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_perl_module);
+./http/modules/perl/ngx_http_perl_module.c:    ngx_http_perl_main_conf_t  *pmcf;
+./http/modules/perl/ngx_http_perl_module.c:    pmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_perl_module);
+./http/modules/perl/ngx_http_perl_module.c:    ngx_http_perl_main_conf_t  *pmcf;
+./http/modules/perl/ngx_http_perl_module.c:    pmcf = ngx_http_cycle_get_module_main_conf(cycle, ngx_http_perl_module);
+./http/modules/perl/nginx.xs:    ngx_http_core_main_conf_t  *cmcf;
+./http/modules/perl/nginx.xs:    cmcf = ngx_http_get_module_main_conf(r, ngx_http_core_module);
+./http/modules/perl/nginx.xs:    r->main->count++;
+./http/modules/ngx_http_fastcgi_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_fastcgi_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_fastcgi_module.c:    ngx_http_upstream_main_conf_t  *umcf;
+./http/modules/ngx_http_fastcgi_module.c:    umcf = ngx_http_get_module_main_conf(r, ngx_http_upstream_module);
+./http/modules/ngx_http_flv_module.c:    NULL,                          /* create main configuration */
+./http/modules/ngx_http_flv_module.c:    NULL,                          /* init main configuration */
+./http/modules/ngx_http_flv_module.c:    b->last_buf = (r == r->main) ? 1 : 0;
+./http/modules/ngx_http_split_clients_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_split_clients_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_gzip_static_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_gzip_static_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_gzip_static_module.c:    b->last_buf = (r == r->main) ? 1 : 0;
+./http/modules/ngx_http_gzip_static_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/modules/ngx_http_gzip_static_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/modules/ngx_http_referer_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_referer_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_ssl_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_ssl_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_ssl_module.c:    ngx_http_core_main_conf_t   *cmcf;
+./http/modules/ngx_http_ssl_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/modules/ngx_http_upstream_keepalive_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_upstream_keepalive_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_not_modified_filter_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_not_modified_filter_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_not_modified_filter_module.c:        || r != r->main
+./http/modules/ngx_http_static_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_static_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_static_module.c:    if (r != r->main && of.size == 0) {
+./http/modules/ngx_http_static_module.c:    b->last_buf = (r == r->main) ? 1: 0;
+./http/modules/ngx_http_static_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/modules/ngx_http_static_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/modules/ngx_http_secure_link_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_secure_link_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_random_index_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_random_index_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_random_index_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/modules/ngx_http_random_index_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/modules/ngx_http_gunzip_filter_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_gunzip_filter_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_gunzip_filter_module.c:    b->last_buf = (r == r->main) ? 1 : 0;
+./http/modules/ngx_http_index_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_index_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_index_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/modules/ngx_http_index_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/modules/ngx_http_autoindex_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_autoindex_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_autoindex_module.c:    if (r == r->main) {
+./http/modules/ngx_http_autoindex_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/modules/ngx_http_autoindex_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/modules/ngx_http_realip_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_realip_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_realip_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/modules/ngx_http_realip_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/modules/ngx_http_gzip_filter_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_gzip_filter_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_gzip_filter_module.c:    r->main_filter_need_in_memory = 1;
+./http/modules/ngx_http_stub_status_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_stub_status_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_stub_status_module.c:    b->last_buf = (r == r->main) ? 1 : 0;
+./http/modules/ngx_http_proxy_module.c:    ngx_array_t                   *cookie_domains;
+./http/modules/ngx_http_proxy_module.c:static char *ngx_http_proxy_cookie_domain(ngx_conf_t *cf, ngx_command_t *cmd,
+./http/modules/ngx_http_proxy_module.c:    { ngx_string("proxy_cookie_domain"),
+./http/modules/ngx_http_proxy_module.c:      ngx_http_proxy_cookie_domain,
+./http/modules/ngx_http_proxy_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_proxy_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_proxy_module.c:    if (plcf->cookie_domains || plcf->cookie_paths) {
+./http/modules/ngx_http_proxy_module.c:    } else if (ctx->vars.uri.len == 0 && r->valid_unparsed_uri && r == r->main)
+./http/modules/ngx_http_proxy_module.c:    } else if (ctx->vars.uri.len == 0 && r->valid_unparsed_uri && r == r->main)
+./http/modules/ngx_http_proxy_module.c:    ngx_http_upstream_main_conf_t  *umcf;
+./http/modules/ngx_http_proxy_module.c:    umcf = ngx_http_get_module_main_conf(r, ngx_http_upstream_module);
+./http/modules/ngx_http_proxy_module.c:    if (plcf->cookie_domains) {
+./http/modules/ngx_http_proxy_module.c:        p = ngx_strcasestrn(h->value.data + prefix, "domain=", 7 - 1);
+./http/modules/ngx_http_proxy_module.c:                                                     plcf->cookie_domains);
+./http/modules/ngx_http_proxy_module.c:ngx_http_proxy_rewrite_domain_handler(ngx_http_request_t *r,
+./http/modules/ngx_http_proxy_module.c:    conf->cookie_domains = NGX_CONF_UNSET_PTR;
+./http/modules/ngx_http_proxy_module.c:    ngx_conf_merge_ptr_value(conf->cookie_domains, prev->cookie_domains, NULL);
+./http/modules/ngx_http_proxy_module.c:ngx_http_proxy_cookie_domain(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
+./http/modules/ngx_http_proxy_module.c:    if (plcf->cookie_domains == NULL) {
+./http/modules/ngx_http_proxy_module.c:            plcf->cookie_domains = NULL;
+./http/modules/ngx_http_proxy_module.c:    if (plcf->cookie_domains == NGX_CONF_UNSET_PTR) {
+./http/modules/ngx_http_proxy_module.c:        plcf->cookie_domains = ngx_array_create(cf->pool, 1,
+./http/modules/ngx_http_proxy_module.c:        if (plcf->cookie_domains == NULL) {
+./http/modules/ngx_http_proxy_module.c:    pr = ngx_array_push(plcf->cookie_domains);
+./http/modules/ngx_http_proxy_module.c:        pr->handler = ngx_http_proxy_rewrite_domain_handler;
+./http/modules/ngx_http_auth_basic_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_auth_basic_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_auth_basic_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/modules/ngx_http_auth_basic_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/modules/ngx_http_uwsgi_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_uwsgi_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_uwsgi_module.c:    ngx_http_upstream_main_conf_t  *umcf;
+./http/modules/ngx_http_uwsgi_module.c:    umcf = ngx_http_get_module_main_conf(r, ngx_http_upstream_module);
+./http/modules/ngx_http_upstream_least_conn_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_upstream_least_conn_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_log_module.c:} ngx_http_log_main_conf_t;
+./http/modules/ngx_http_log_module.c:static void *ngx_http_log_create_main_conf(ngx_conf_t *cf);
+./http/modules/ngx_http_log_module.c:    ngx_http_log_create_main_conf,         /* create main configuration */
+./http/modules/ngx_http_log_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_log_module.c:ngx_http_log_create_main_conf(ngx_conf_t *cf)
+./http/modules/ngx_http_log_module.c:    ngx_http_log_main_conf_t  *conf;
+./http/modules/ngx_http_log_module.c:    conf = ngx_pcalloc(cf->pool, sizeof(ngx_http_log_main_conf_t));
+./http/modules/ngx_http_log_module.c:    ngx_http_log_main_conf_t  *lmcf;
+./http/modules/ngx_http_log_module.c:    lmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_log_module);
+./http/modules/ngx_http_log_module.c:    ngx_http_log_main_conf_t   *lmcf;
+./http/modules/ngx_http_log_module.c:    lmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_log_module);
+./http/modules/ngx_http_log_module.c:    ngx_http_log_main_conf_t *lmcf = conf;
+./http/modules/ngx_http_log_module.c:    ngx_http_log_main_conf_t   *lmcf;
+./http/modules/ngx_http_log_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/modules/ngx_http_log_module.c:    lmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_log_module);
+./http/modules/ngx_http_log_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/modules/ngx_http_memcached_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_memcached_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_memcached_module.c:    r->main->count++;
+./http/modules/ngx_http_charset_filter_module.c:} ngx_http_charset_main_conf_t;
+./http/modules/ngx_http_charset_filter_module.c:static ngx_int_t ngx_http_main_request_charset(ngx_http_request_t *r,
+./http/modules/ngx_http_charset_filter_module.c:static void *ngx_http_charset_create_main_conf(ngx_conf_t *cf);
+./http/modules/ngx_http_charset_filter_module.c:    ngx_http_charset_create_main_conf,     /* create main configuration */
+./http/modules/ngx_http_charset_filter_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_charset_filter_module.c:    ngx_http_charset_main_conf_t  *mcf;
+./http/modules/ngx_http_charset_filter_module.c:    if (r == r->main) {
+./http/modules/ngx_http_charset_filter_module.c:        charset = ngx_http_main_request_charset(r, &dst);
+./http/modules/ngx_http_charset_filter_module.c:    mcf = ngx_http_get_module_main_conf(r, ngx_http_charset_filter_module);
+./http/modules/ngx_http_charset_filter_module.c:    ngx_http_charset_main_conf_t  *mcf;
+./http/modules/ngx_http_charset_filter_module.c:        mcf = ngx_http_get_module_main_conf(r, ngx_http_charset_filter_module);
+./http/modules/ngx_http_charset_filter_module.c:ngx_http_main_request_charset(ngx_http_request_t *r, ngx_str_t *src)
+./http/modules/ngx_http_charset_filter_module.c:    ngx_str_t               *main_charset;
+./http/modules/ngx_http_charset_filter_module.c:    ctx = ngx_http_get_module_ctx(r->main, ngx_http_charset_filter_module);
+./http/modules/ngx_http_charset_filter_module.c:    main_charset = &r->main->headers_out.charset;
+./http/modules/ngx_http_charset_filter_module.c:    if (main_charset->len == 0) {
+./http/modules/ngx_http_charset_filter_module.c:    ngx_http_set_ctx(r->main, ctx, ngx_http_charset_filter_module);
+./http/modules/ngx_http_charset_filter_module.c:    charset = ngx_http_get_charset(r, main_charset);
+./http/modules/ngx_http_charset_filter_module.c:    ctx->charset_name = *main_charset;
+./http/modules/ngx_http_charset_filter_module.c:    *src = *main_charset;
+./http/modules/ngx_http_charset_filter_module.c:    ngx_http_charset_main_conf_t  *mcf;
+./http/modules/ngx_http_charset_filter_module.c:        mcf = ngx_http_get_module_main_conf(r, ngx_http_charset_filter_module);
+./http/modules/ngx_http_charset_filter_module.c:    ngx_http_charset_main_conf_t  *mcf;
+./http/modules/ngx_http_charset_filter_module.c:    mcf = ngx_http_get_module_main_conf(r, ngx_http_charset_filter_module);
+./http/modules/ngx_http_charset_filter_module.c:    if (r != r->main) {
+./http/modules/ngx_http_charset_filter_module.c:    if ((ctx->to_utf8 || ctx->from_utf8) && r == r->main) {
+./http/modules/ngx_http_charset_filter_module.c:    ngx_http_charset_main_conf_t  *mcf = conf;
+./http/modules/ngx_http_charset_filter_module.c:    ngx_http_charset_main_conf_t  *mcf;
+./http/modules/ngx_http_charset_filter_module.c:    mcf = ngx_http_conf_get_module_main_conf(cf,
+./http/modules/ngx_http_charset_filter_module.c:ngx_http_charset_create_main_conf(ngx_conf_t *cf)
+./http/modules/ngx_http_charset_filter_module.c:    ngx_http_charset_main_conf_t  *mcf;
+./http/modules/ngx_http_charset_filter_module.c:    mcf = ngx_pcalloc(cf->pool, sizeof(ngx_http_charset_main_conf_t));
+./http/modules/ngx_http_charset_filter_module.c:    ngx_http_charset_main_conf_t  *mcf;
+./http/modules/ngx_http_charset_filter_module.c:    mcf = ngx_http_conf_get_module_main_conf(cf,
+./http/modules/ngx_http_charset_filter_module.c:    ngx_http_charset_main_conf_t  *mcf;
+./http/modules/ngx_http_charset_filter_module.c:    mcf = ngx_http_conf_get_module_main_conf(cf,
+./http/modules/ngx_http_mp4_module.c:    NULL,                          /* create main configuration */
+./http/modules/ngx_http_mp4_module.c:    NULL,                          /* init main configuration */
+./http/modules/ngx_http_mp4_module.c:    b->last_buf = (r == r->main) ? 1 : 0;
+./http/modules/ngx_http_userid_filter_module.c:    ngx_str_t   domain;
+./http/modules/ngx_http_userid_filter_module.c:static char *ngx_http_userid_domain(ngx_conf_t *cf, void *post, void *data);
+./http/modules/ngx_http_userid_filter_module.c:static ngx_conf_post_handler_pt  ngx_http_userid_domain_p =
+./http/modules/ngx_http_userid_filter_module.c:    ngx_http_userid_domain;
+./http/modules/ngx_http_userid_filter_module.c:    { ngx_string("userid_domain"),
+./http/modules/ngx_http_userid_filter_module.c:      offsetof(ngx_http_userid_conf_t, domain),
+./http/modules/ngx_http_userid_filter_module.c:      &ngx_http_userid_domain_p },
+./http/modules/ngx_http_userid_filter_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_userid_filter_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_userid_filter_module.c:    if (r != r->main) {
+./http/modules/ngx_http_userid_filter_module.c:    conf = ngx_http_get_module_loc_conf(r->main, ngx_http_userid_filter_module);
+./http/modules/ngx_http_userid_filter_module.c:    ctx = ngx_http_userid_get_uid(r->main, conf);
+./http/modules/ngx_http_userid_filter_module.c:        return ngx_http_userid_variable(r->main, v, &conf->name, ctx->uid_got);
+./http/modules/ngx_http_userid_filter_module.c:    conf = ngx_http_get_module_loc_conf(r->main, ngx_http_userid_filter_module);
+./http/modules/ngx_http_userid_filter_module.c:    ctx = ngx_http_userid_get_uid(r->main, conf);
+./http/modules/ngx_http_userid_filter_module.c:    if (ngx_http_userid_create_uid(r->main, ctx, conf) != NGX_OK) {
+./http/modules/ngx_http_userid_filter_module.c:    return ngx_http_userid_variable(r->main, v, &conf->name, ctx->uid_set);
+./http/modules/ngx_http_userid_filter_module.c:    if (conf->domain.len) {
+./http/modules/ngx_http_userid_filter_module.c:        len += conf->domain.len;
+./http/modules/ngx_http_userid_filter_module.c:    p = ngx_copy(p, conf->domain.data, conf->domain.len);
+./http/modules/ngx_http_userid_filter_module.c:     *     conf->domain = { 0, NULL };
+./http/modules/ngx_http_userid_filter_module.c:    ngx_conf_merge_str_value(conf->domain, prev->domain, "");
+./http/modules/ngx_http_userid_filter_module.c:ngx_http_userid_domain(ngx_conf_t *cf, void *post, void *data)
+./http/modules/ngx_http_userid_filter_module.c:    ngx_str_t  *domain = data;
+./http/modules/ngx_http_userid_filter_module.c:    if (ngx_strcmp(domain->data, "none") == 0) {
+./http/modules/ngx_http_userid_filter_module.c:        ngx_str_set(domain, "");
+./http/modules/ngx_http_userid_filter_module.c:    new = ngx_pnalloc(cf->pool, sizeof("; domain=") - 1 + domain->len);
+./http/modules/ngx_http_userid_filter_module.c:    p = ngx_cpymem(new, "; domain=", sizeof("; domain=") - 1);
+./http/modules/ngx_http_userid_filter_module.c:    ngx_memcpy(p, domain->data, domain->len);
+./http/modules/ngx_http_userid_filter_module.c:    domain->len += sizeof("; domain=") - 1;
+./http/modules/ngx_http_userid_filter_module.c:    domain->data = new;
+./http/modules/ngx_http_upstream_ip_hash_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_upstream_ip_hash_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_ssi_filter_module.c:static void *ngx_http_ssi_create_main_conf(ngx_conf_t *cf);
+./http/modules/ngx_http_ssi_filter_module.c:static char *ngx_http_ssi_init_main_conf(ngx_conf_t *cf, void *conf);
+./http/modules/ngx_http_ssi_filter_module.c:    ngx_http_ssi_create_main_conf,         /* create main configuration */
+./http/modules/ngx_http_ssi_filter_module.c:    ngx_http_ssi_init_main_conf,           /* init main configuration */
+./http/modules/ngx_http_ssi_filter_module.c:    if (r == r->main) {
+./http/modules/ngx_http_ssi_filter_module.c:    ngx_http_ssi_main_conf_t  *smcf;
+./http/modules/ngx_http_ssi_filter_module.c:                        mctx = ngx_http_get_module_ctx(r->main,
+./http/modules/ngx_http_ssi_filter_module.c:                smcf = ngx_http_get_module_main_conf(r,
+./http/modules/ngx_http_ssi_filter_module.c:                        mctx = ngx_http_get_module_ctx(r->main,
+./http/modules/ngx_http_ssi_filter_module.c:    ctx = ngx_http_get_module_ctx(r->main, ngx_http_ssi_filter_module);
+./http/modules/ngx_http_ssi_filter_module.c:    ctx = ngx_http_get_module_ctx(r->main, ngx_http_ssi_filter_module);
+./http/modules/ngx_http_ssi_filter_module.c:    mctx = ngx_http_get_module_ctx(r->main, ngx_http_ssi_filter_module);
+./http/modules/ngx_http_ssi_filter_module.c:    mctx = ngx_http_get_module_ctx(r->main, ngx_http_ssi_filter_module);
+./http/modules/ngx_http_ssi_filter_module.c:    mctx = ngx_http_get_module_ctx(r->main, ngx_http_ssi_filter_module);
+./http/modules/ngx_http_ssi_filter_module.c:    ngx_http_ssi_main_conf_t  *smcf;
+./http/modules/ngx_http_ssi_filter_module.c:    smcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_ssi_filter_module);
+./http/modules/ngx_http_ssi_filter_module.c:ngx_http_ssi_create_main_conf(ngx_conf_t *cf)
+./http/modules/ngx_http_ssi_filter_module.c:    ngx_http_ssi_main_conf_t  *smcf;
+./http/modules/ngx_http_ssi_filter_module.c:    smcf = ngx_pcalloc(cf->pool, sizeof(ngx_http_ssi_main_conf_t));
+./http/modules/ngx_http_ssi_filter_module.c:ngx_http_ssi_init_main_conf(ngx_conf_t *cf, void *conf)
+./http/modules/ngx_http_ssi_filter_module.c:    ngx_http_ssi_main_conf_t *smcf = conf;
+./http/modules/ngx_http_addition_filter_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_addition_filter_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_addition_filter_module.c:    if (r->headers_out.status != NGX_HTTP_OK || r != r->main) {
+./http/modules/ngx_http_range_filter_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_range_filter_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_range_filter_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_range_filter_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_range_filter_module.c:        || r != r->main
+./http/modules/ngx_http_map_module.c:    ngx_http_map_create_conf,              /* create main configuration */
+./http/modules/ngx_http_map_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_rewrite_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_rewrite_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_rewrite_module.c:    ngx_http_core_main_conf_t    *cmcf;
+./http/modules/ngx_http_rewrite_module.c:    cmcf = ngx_http_get_module_main_conf(r, ngx_http_core_module);
+./http/modules/ngx_http_rewrite_module.c:    ngx_http_core_main_conf_t    *cmcf;
+./http/modules/ngx_http_rewrite_module.c:    cmcf = ngx_http_get_module_main_conf(r, ngx_http_core_module);
+./http/modules/ngx_http_rewrite_module.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/modules/ngx_http_rewrite_module.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/modules/ngx_http_rewrite_module.c:    sc.main = regex;
+./http/modules/ngx_http_rewrite_module.c:    regex = sc.main;
+./http/modules/ngx_http_rewrite_module.c:    ctx->main_conf = pctx->main_conf;
+./http/modules/ngx_http_chunked_filter_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_chunked_filter_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_chunked_filter_module.c:        || r != r->main
+./http/modules/ngx_http_image_filter_module.c:    NULL,                                  /* create main configuration */
+./http/modules/ngx_http_image_filter_module.c:    NULL,                                  /* init main configuration */
+./http/modules/ngx_http_image_filter_module.c:    r->main_filter_need_in_memory = 1;
+./http/ngx_http_request.h:    void                            **main_conf;
+./http/ngx_http_request.h:    ngx_http_request_t               *main;
+./http/ngx_http_request.h:    unsigned                          main_filter_need_in_memory:1;
+./http/ngx_http_special_response.c:    if (r == r->main) {
+./http/ngx_http_postpone_filter_module.c:    NULL,                                  /* create main configuration */
+./http/ngx_http_postpone_filter_module.c:    NULL,                                  /* init main configuration */
+./http/ngx_http_postpone_filter_module.c:            return ngx_http_next_body_filter(r->main, in);
+./http/ngx_http_postpone_filter_module.c:            if (ngx_http_next_body_filter(r->main, pr->out) == NGX_ERROR) {
+./http/ngx_http_request_body.c:    r->main->count++;
+./http/ngx_http_request_body.c:        r->main->count--;
+./http/ngx_http_request_body.c:    if (r != r->main || r->discard_body || r->request_body) {
+./http/ngx_http_config.h:    void        **main_conf;
+./http/ngx_http_config.h:    void       *(*create_main_conf)(ngx_conf_t *cf);
+./http/ngx_http_config.h:    char       *(*init_main_conf)(ngx_conf_t *cf, void *conf);
+./http/ngx_http_config.h:#define NGX_HTTP_MAIN_CONF_OFFSET  offsetof(ngx_http_conf_ctx_t, main_conf)
+./http/ngx_http_config.h:#define ngx_http_get_module_main_conf(r, module)                             \
+./http/ngx_http_config.h:    (r)->main_conf[module.ctx_index]
+./http/ngx_http_config.h:#define ngx_http_conf_get_module_main_conf(cf, module)                        \
+./http/ngx_http_config.h:    ((ngx_http_conf_ctx_t *) cf->ctx)->main_conf[module.ctx_index]
+./http/ngx_http_config.h:#define ngx_http_cycle_get_module_main_conf(cycle, module)                    \
+./http/ngx_http_config.h:            ->main_conf[module.ctx_index]:                                    \
+./http/ngx_http_request.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_request.c:    r->main_conf = cscf->ctx->main_conf;
+./http/ngx_http_request.c:        r->main_filter_need_in_memory = 1;
+./http/ngx_http_request.c:    cmcf = ngx_http_get_module_main_conf(r, ngx_http_core_module);
+./http/ngx_http_request.c:    r->main = r;
+./http/ngx_http_request.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_request.c:    cmcf = ngx_http_get_module_main_conf(r, ngx_http_core_module);
+./http/ngx_http_request.c:        pr = r->main->posted_requests;
+./http/ngx_http_request.c:        r->main->posted_requests = pr->next;
+./http/ngx_http_request.c:    for (p = &r->main->posted_requests; *p; p = &(*p)->next) { /* void */ }
+./http/ngx_http_request.c:                   rc, &r->uri, &r->args, r == c->data, r->main->count);
+./http/ngx_http_request.c:    if (r != r->main && r->post_subrequest) {
+./http/ngx_http_request.c:        if (r->main->blocked) {
+./http/ngx_http_request.c:        if (r == r->main) {
+./http/ngx_http_request.c:    if (r != r->main) {
+./http/ngx_http_request.c:            r->main->count--;
+./http/ngx_http_request.c:            r->main->subrequests++;
+./http/ngx_http_request.c:            r->main->count++;
+./http/ngx_http_request.c:    mr = r->main;
+./http/ngx_http_request.c:    if (r->main->count != 1) {
+./http/ngx_http_request.c:    clcf = ngx_http_get_module_loc_conf(r->main, ngx_http_core_module);
+./http/ngx_http_request.c:    if (r->buffered || r->postponed || (r == r->main && c->buffered)) {
+./http/ngx_http_request.c:        if (r == r->main && !r->post_action) {
+./http/ngx_http_request.c:    r->main->count--;
+./http/ngx_http_request.c:    r = r->main;
+./http/ngx_http_request.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_request.c:    cmcf = ngx_http_get_module_main_conf(r, ngx_http_core_module);
+./http/ngx_http.c:    ngx_http_core_main_conf_t *cmcf);
+./http/ngx_http.c:    ngx_http_core_main_conf_t *cmcf);
+./http/ngx_http.c:    ngx_http_core_main_conf_t *cmcf);
+./http/ngx_http.c:    ngx_http_core_main_conf_t *cmcf, ngx_http_module_t *module,
+./http/ngx_http.c:    ngx_http_core_main_conf_t *cmcf, ngx_array_t *ports);
+./http/ngx_http.c:    ngx_http_core_main_conf_t *cmcf, ngx_http_conf_addr_t *addr);
+./http/ngx_http.c:    ngx_http_core_main_conf_t   *cmcf;
+./http/ngx_http.c:    /* the main http context */
+./http/ngx_http.c:    /* the http main_conf context, it is the same in the all http contexts */
+./http/ngx_http.c:    ctx->main_conf = ngx_pcalloc(cf->pool,
+./http/ngx_http.c:    if (ctx->main_conf == NULL) {
+./http/ngx_http.c:     * create the main_conf's, the null srv_conf's, and the null loc_conf's
+./http/ngx_http.c:        if (module->create_main_conf) {
+./http/ngx_http.c:            ctx->main_conf[mi] = module->create_main_conf(cf);
+./http/ngx_http.c:            if (ctx->main_conf[mi] == NULL) {
+./http/ngx_http.c:     * init http{} main_conf's, merge the server{}s' srv_conf's
+./http/ngx_http.c:    cmcf = ctx->main_conf[ngx_http_core_module.ctx_index];
+./http/ngx_http.c:        /* init http{} main_conf's */
+./http/ngx_http.c:        if (module->init_main_conf) {
+./http/ngx_http.c:            rv = module->init_main_conf(cf, ctx->main_conf[mi]);
+./http/ngx_http.c:ngx_http_init_phases(ngx_conf_t *cf, ngx_http_core_main_conf_t *cmcf)
+./http/ngx_http.c:ngx_http_init_headers_in_hash(ngx_conf_t *cf, ngx_http_core_main_conf_t *cmcf)
+./http/ngx_http.c:ngx_http_init_phase_handlers(ngx_conf_t *cf, ngx_http_core_main_conf_t *cmcf)
+./http/ngx_http.c:ngx_http_merge_servers(ngx_conf_t *cf, ngx_http_core_main_conf_t *cmcf,
+./http/ngx_http.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/ngx_http.c:ngx_http_optimize_servers(ngx_conf_t *cf, ngx_http_core_main_conf_t *cmcf,
+./http/ngx_http.c:ngx_http_server_names(ngx_conf_t *cf, ngx_http_core_main_conf_t *cmcf,
+./http/ngx_http_variables.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_variables.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/ngx_http_variables.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_variables.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/ngx_http_variables.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_variables.c:    cmcf = ngx_http_get_module_main_conf(r, ngx_http_core_module);
+./http/ngx_http_variables.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_variables.c:    cmcf = ngx_http_get_module_main_conf(r, ngx_http_core_module);
+./http/ngx_http_variables.c:    if (r->main->method_name.data) {
+./http/ngx_http_variables.c:        v->len = r->main->method_name.len;
+./http/ngx_http_variables.c:        v->data = r->main->method_name.data;
+./http/ngx_http_variables.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_variables.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/ngx_http_variables.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_variables.c:    cmcf = ngx_http_get_module_main_conf(r, ngx_http_core_module);
+./http/ngx_http_variables.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_variables.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/ngx_http_variables.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_variables.c:    cmcf = ngx_http_conf_get_module_main_conf(cf, ngx_http_core_module);
+./http/ngx_http_script.c:    ngx_http_core_main_conf_t    *cmcf;
+./http/ngx_http_script.c:    cmcf = ngx_http_get_module_main_conf(r, ngx_http_core_module);
+./http/ngx_http_script.c:                                        &sc->main);
+./http/ngx_http_script.c:    code = ngx_http_script_add_code(*sc->values, size, &sc->main);
+./http/ngx_http_script.c:                                    &sc->main);
+./http/ngx_http_script.c:    code = ngx_http_script_add_code(*sc->values, sizeof(uintptr_t), &sc->main);
+./http/ngx_http_script.c:                                    &sc->main);
+./http/ngx_http_script.c:                                    &sc->main);
+./http/ngx_http_script.c:    ngx_http_core_main_conf_t  *cmcf;
+./http/ngx_http_script.c:    cmcf = ngx_http_get_module_main_conf(r, ngx_http_core_module);
+./http/ngx_http_copy_filter_module.c:    NULL,                                  /* create main configuration */
+./http/ngx_http_copy_filter_module.c:    NULL,                                  /* init main configuration */
+./http/ngx_http_copy_filter_module.c:        ctx->need_in_memory = r->main_filter_need_in_memory
+./http/ngx_http_copy_filter_module.c:                r->main->blocked++;
+./http/ngx_http_copy_filter_module.c:    r->main->blocked++;
+./http/ngx_http_copy_filter_module.c:    r->main->blocked--;
+./http/ngx_http_copy_filter_module.c:    r->main->blocked--;
+./http/ngx_http_upstream.h:} ngx_http_upstream_main_conf_t;
+./http/ngx_http_core_module.h:} ngx_http_core_main_conf_t;
+./http/ngx_http_script.h:    void                       *main;
+./http/ngx_http_header_filter_module.c:    NULL,                                  /* create main configuration */
+./http/ngx_http_header_filter_module.c:    NULL,                                  /* init main configuration */
+./http/ngx_http_header_filter_module.c:    if (r != r->main) {
+./http/ngx_http_file_cache.c:    r->main->blocked++;
+./http/ngx_http_file_cache.c:    r->main->blocked--;
+./http/ngx_http_file_cache.c:    r->main->blocked++;
+./http/ngx_http_file_cache.c:    r->main->blocked--;
+./http/ngx_http_file_cache.c:    if (r != r->main && c->length - c->body_start == 0) {
+./http/ngx_http_file_cache.c:    b->last_buf = (r == r->main) ? 1: 0;
+./http/ngx_http_write_filter_module.c:    NULL,                                  /* create main configuration */
+./http/ngx_http_write_filter_module.c:    NULL,                                  /* init main configuration */
+./mail/ngx_mail_ssl_module.c:    NULL,                                  /* create main configuration */
+./mail/ngx_mail_ssl_module.c:    NULL,                                  /* init main configuration */
+./mail/ngx_mail_auth_http_module.c:    NULL,                                  /* create main configuration */
+./mail/ngx_mail_auth_http_module.c:    NULL,                                  /* init main configuration */
+./mail/ngx_mail_pop3_module.c:    NULL,                                  /* create main configuration */
+./mail/ngx_mail_pop3_module.c:    NULL,                                  /* init main configuration */
+./mail/ngx_mail_imap_module.c:    NULL,                                  /* create main configuration */
+./mail/ngx_mail_imap_module.c:    NULL,                                  /* init main configuration */
+./mail/ngx_mail.c:    ngx_mail_core_main_conf_t   *cmcf;
+./mail/ngx_mail.c:    /* the main mail context */
+./mail/ngx_mail.c:    /* the mail main_conf context, it is the same in the all mail contexts */
+./mail/ngx_mail.c:    ctx->main_conf = ngx_pcalloc(cf->pool,
+./mail/ngx_mail.c:    if (ctx->main_conf == NULL) {
+./mail/ngx_mail.c:     * create the main_conf's, the null srv_conf's, and the null loc_conf's
+./mail/ngx_mail.c:        if (module->create_main_conf) {
+./mail/ngx_mail.c:            ctx->main_conf[mi] = module->create_main_conf(cf);
+./mail/ngx_mail.c:            if (ctx->main_conf[mi] == NULL) {
+./mail/ngx_mail.c:    /* init mail{} main_conf's, merge the server{}s' srv_conf's */
+./mail/ngx_mail.c:    cmcf = ctx->main_conf[ngx_mail_core_module.ctx_index];
+./mail/ngx_mail.c:        /* init mail{} main_conf's */
+./mail/ngx_mail.c:        if (module->init_main_conf) {
+./mail/ngx_mail.c:            rv = module->init_main_conf(cf, ctx->main_conf[mi]);
+./mail/ngx_mail_core_module.c:static void *ngx_mail_core_create_main_conf(ngx_conf_t *cf);
+./mail/ngx_mail_core_module.c:    ngx_mail_core_create_main_conf,        /* create main configuration */
+./mail/ngx_mail_core_module.c:    NULL,                                  /* init main configuration */
+./mail/ngx_mail_core_module.c:ngx_mail_core_create_main_conf(ngx_conf_t *cf)
+./mail/ngx_mail_core_module.c:    ngx_mail_core_main_conf_t  *cmcf;
+./mail/ngx_mail_core_module.c:    cmcf = ngx_pcalloc(cf->pool, sizeof(ngx_mail_core_main_conf_t));
+./mail/ngx_mail_core_module.c:    ngx_mail_core_main_conf_t  *cmcf;
+./mail/ngx_mail_core_module.c:    ctx->main_conf = mail_ctx->main_conf;
+./mail/ngx_mail_core_module.c:    cmcf = ctx->main_conf[ngx_mail_core_module.ctx_index];
+./mail/ngx_mail_core_module.c:    ngx_mail_core_main_conf_t  *cmcf;
+./mail/ngx_mail_core_module.c:    cmcf = ngx_mail_conf_get_module_main_conf(cf, ngx_mail_core_module);
+./mail/ngx_mail.h:    void                  **main_conf;
+./mail/ngx_mail.h:} ngx_mail_core_main_conf_t;
+./mail/ngx_mail.h:    void                  **main_conf;
+./mail/ngx_mail.h:    void                       *(*create_main_conf)(ngx_conf_t *cf);
+./mail/ngx_mail.h:    char                       *(*init_main_conf)(ngx_conf_t *cf, void *conf);
+./mail/ngx_mail.h:#define NGX_MAIL_MAIN_CONF_OFFSET  offsetof(ngx_mail_conf_ctx_t, main_conf)
+./mail/ngx_mail.h:#define ngx_mail_get_module_main_conf(s, module)                             \
+./mail/ngx_mail.h:    (s)->main_conf[module.ctx_index]
+./mail/ngx_mail.h:#define ngx_mail_conf_get_module_main_conf(cf, module)                       \
+./mail/ngx_mail.h:    ((ngx_mail_conf_ctx_t *) cf->ctx)->main_conf[module.ctx_index]
+./mail/ngx_mail_smtp_module.c:    NULL,                                  /* create main configuration */
+./mail/ngx_mail_smtp_module.c:    NULL,                                  /* init main configuration */
+./mail/ngx_mail_proxy_module.c:    NULL,                                  /* create main configuration */
+./mail/ngx_mail_proxy_module.c:    NULL,                                  /* init main configuration */
+./mail/ngx_mail_handler.c:    s->main_conf = addr_conf->ctx->main_conf;
+./os/unix/ngx_thread.h:#define ngx_thread_main()     1
+./os/unix/ngx_freebsd_rfork_thread.c: * below the main stack.  Thus the current thread id is determined via
+./os/unix/ngx_freebsd_rfork_thread.c:static int   errno0;   /* the main thread's errno */
+./os/unix/ngx_freebsd_rfork_thread.c:    /* the main thread stack red zone */
+./os/unix/ngx_process_cycle.c:     * Set correct process type since closing listening Unix domain socket
+./os/unix/ngx_process_cycle.c:     * in a master process also removes the Unix domain socket file.
